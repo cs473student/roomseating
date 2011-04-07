@@ -3,8 +3,9 @@ Classroom::Application.routes.draw do
   #resources :loginseatings
 
   resources :users
-
-  
+ 
+  match '/users/new' => 'users#new', :as => :newuser
+  match '/users/index' => 'users#index', :as => :users_index  
   match '/seatings/index' => 'seatings#index', :as => :seating
   
   resources :loginseatings do
